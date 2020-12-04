@@ -1,11 +1,15 @@
 # MidtermProjectTristanTran
 Midterm project Tristan Tran
 
-Goal Program a beginner sentiment analysis program usiong the tidy text package. Tutorial information wil be provided from the tidytextmining website.
-https://www.tidytextmining.com/tidytext.html
-
-Code will focus on analyzing Frankenstein at first. Will progress to compare the other classics. Gutenberg library was used and must be installed in order to work.
-https://cran.r-project.org/web/packages/gutenbergr/vignettes/intro.html
+## About the Analysis
+This project takes in several Gutenberg ID's and titles for classic horror novels and performs text mining on them.
 
 
-Updated will compare the pace of sentiment between different horror novels. We will use the works of Bram Stoker, Mary Shelley,Isaac Assimov, and H.P Lovecraft
+## Code Out
+It will return jpeg word clouds and some plots showing the most commonly used words in each book and a sentiment analysis by chapter.
+
+## To run the analysis
+1. Open the R Project.
+2. Create a "results/" folder in the top directory.
+3. Make changes to the inputs as desired.
+4. source("src/simulate_advdiff.R", chdir = TRUE)
