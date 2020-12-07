@@ -8,12 +8,12 @@ library(wordcloud)
 library(tidyr)
 library(ggplot2)
 
-<<<<<<< HEAD
+
 dir.create("results")
 books <- read.table("data/booklist.csv",header=TRUE,sep=",")
-=======
+
 books <- read.table("../data/booklist.csv",header=TRUE,sep=",")
->>>>>>> main
+
 horror_book_id = books["gutenberg_id"]
 horror_books <- gutenberg_download(horror_book_id, meta_fields = "title")
 
