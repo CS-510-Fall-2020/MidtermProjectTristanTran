@@ -14,4 +14,8 @@ It will return jpeg word clouds and some plots showing the most commonly used wo
 1. Open the R Project.
 2. Create a "results/" folder in the top directory.
 3. Make changes to the inputs as desired.
+<<<<<<< HEAD
 4. source("src/HorrorAnalysis.R", chdir = TRUE)
+=======
+4. source("src/HorrorAnalysis.R", chdir = TRUE)
+>>>>>>> main

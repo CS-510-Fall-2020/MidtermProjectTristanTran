@@ -67,4 +67,3 @@ nrc_fear <- get_sentiments("nrc")%>%
 tidy_horror%>%
   filter(gutenberg_id == 42) %>%
   inner_join(nrc_fear)%>%
-  count(word,sort=TRUE)
