@@ -2,7 +2,7 @@
 Midterm project Tristan Tran
 
 ## About the Analysis
-This project takes in several Gutenberg ID's and titles for classic horror novels and performs text mining on them. It outputs word clouds and in the future expansion will include work with sentiment analysis, measuring the count of fear throughout the text.
+This project takes in several Gutenberg ID's and titles for classic horror novels and performs text mining on them. It outputs word clouds and in the future expansion will include work with sentiment analysis, measuring the count of fear throughout the text. Based on the example through tidy text, text mining tutorial. I'm pretty proud of it, but it's still got a ways to go.
 
 ## Code Inputs
 The code takes in a CSV containing gutenberg ID's.
