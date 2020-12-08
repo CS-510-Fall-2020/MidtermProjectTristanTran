@@ -42,7 +42,6 @@ for (row in 1:nrow(books)){
   create_wordcloud(id,title,tidy_horror)
 }
 
-print("hello")
 #get for each chapter (defined as 80 lines) find the net positive sentiment for each book
 horror_sentiment <- tidy_horror %>%
   inner_join(get_sentiments("bing"))%>%
