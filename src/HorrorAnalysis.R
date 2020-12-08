@@ -12,8 +12,6 @@ library(ggplot2)
 dir.create("results")
 books <- read.table("data/booklist.csv",header=TRUE,sep=",")
 
-books <- read.table("../data/booklist.csv",header=TRUE,sep=",")
-
 horror_book_id = books["gutenberg_id"]
 horror_books <- gutenberg_download(horror_book_id, meta_fields = "title")
 
@@ -58,12 +56,3 @@ ggplot(horror_sentiment, aes(index, sentiment, fill = title)) +
   facet_wrap(~title, ncol = 2, scales = "free_x")
 
 ggsave("results/booktrajectory.jpeg")
-
-#extra code below. I wanna use it later, but couldn't incorporate it into this project
-nrc_fear <- get_sentiments("nrc")%>%
-  filter(sentiment == "fear")
-
-#does the code for one book
-tidy_horror%>%
-  filter(gutenberg_id == 42) %>%
-  inner_join(nrc_fear)%>%
