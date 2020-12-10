@@ -51,8 +51,14 @@ The purpose of this project was to create a relatable visual representation of e
 3. Make changes to the inputs as desired.
 4. source("src/HorrorAnalysis.R", chdir = FALSE)
 
-## Challenges
+## Updates after peer review
+- Refactor of code: Moving functions and imports to a separate script. fixing some formatting issues with whitespace.
+- Updating readme to give more explanation of the project.
+
+
+## Challenges and Opportunities
 - Most classic works of literature are written with different lexicons: Clowns used to be popular entertainment for children's parties and are now a common fear. 
 - Omission of anachronistic sentiments such as the use of the word miss as both an honorific vs. a failure.
 - Automatic scaling of the word cloud so that most popular words are not omitted
 - Ommission of character names from word clouds.
+- Encapsulating the project into a R-Markdown format.
