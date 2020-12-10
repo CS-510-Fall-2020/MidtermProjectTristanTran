@@ -24,10 +24,12 @@ This lexicon gives some more granularity to the positive or negative emotions. I
 ### NRC
 The nrc emotion lexicon is a list of english words and their associations with one of the eight basic emotions: anger, fear, anticipation, trust, surprise, sadness, joy, and disgust. This is useful to find the general tone of sections of a book.
 
+---
 ## Code Inputs
 The code takes in a CSV containing gutenberg ID's. feel free to add any books you would like. They don't have to be horror, but I just particularly like that genre. You can find more titles and ids here
 http://www.gutenberg.org/
 
+---
 ## Code Out
 It will return jpeg word clouds and some plots showing the most commonly used words in each book and a sentiment analysis by chapter.
 
@@ -50,7 +52,7 @@ The purpose of this project was to create a relatable visual representation of e
 2. Create a "results/" folder in the top directory.
 3. Make changes to the inputs as desired.
 4. source("src/HorrorAnalysis.R", chdir = FALSE)
-
+---
 ## Updates after peer review
 - Refactor of code: Moving functions and imports to a separate script. fixing some formatting issues with whitespace.
 - Updating readme to give more explanation of the project.
