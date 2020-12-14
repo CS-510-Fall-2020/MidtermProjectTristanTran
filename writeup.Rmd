@@ -1,0 +1,77 @@
+---
+title: Starter Project for Sentiment Analysis
+author: Tristan Tran
+date: "12/14/2020"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  word_document: default
+bibliography: BibLaTex.bib
+csl: journal-of-the-royal-society-interface.csl
+nocite: '@*'
+---
+
+
+\section*{Introduction}
+Sentiment analysis and text mining allows Data Scientists to classify text, novels, and other written forms of communication as data. Its practical applications can allow machine learning models and artificial intelligence understand how humans talk and how they feel. Imagine a world where mental health could be diagnosed from a few text messages, consumers could better find the products they need, and computers could speak a little more like humans. Although this project is merely an introductory level endeavor, it hopes to build a foundation to accomplish such feats in the future. 
+
+\section*{Purpose}
+The purpose of this project was to practice the basic techniques of data manipulation and working with text data. Text data often comes in forms that are difficult to work with and analyze. Text mining techniques and packages such as tidy text make this process a lot smoother.
+
+The program is run by calling the following code.
+```{r setup, echo=TRUE,message=FALSE,warning=FALSE,results=FALSE}
+source("src/HorrorAnalysis.R")
+```
+The code reads through a csv "data/booklist.csv" and returns a word cloud for each book listed.
+
+\section*{Important Packages}
+For this project several packages were used to make the data readable and to generate the graphics
+
+
+\subsection{dplyr}
+The dplyr package is used to manipulate and modify data frames. The included mutate() function was used to produce the line number and chapter columns in the tidy versions of the book.
+
+\subsection{gutenbergr}
+The gutenbergr package gives the user access to the thousands of books that have been uploaded to project Gutenberg that aims to provide the world with free and easy to access classic literature so that our collective human culture and knowledge does not get lost. This package was used to import several classical horror novels from the included csv file. Below is an example of how one would import a single file. By calling the head function, it is apparent that the formatting and whitespace make it difficult to perform any sort of analysis.
+
+```{r gutenberg}
+drjekyll<-gutenberg_download(42,meta_fields ="title")
+head(drjekyll,12)
+```
+
+
+\subsection{Tidy Things}
+The function located in the sentiment_analysis.R file
+
+```{r create}
+create_tidy_books
+```
+
+The tidytext, stringr, and tidyr packages are all designed to make the data more readable. The tidytext website describes a tidy data format as one observation per row with one attribute per column. The function create_tidy_books utilizes the functions from these packages separate the words from their line numbers without losing any information, other than capitalization.
+
+```{r maketidy}
+tidy_jekyll <- create_tidy_books(drjekyll)
+
+head(tidy_jekyll,12)
+```
+This package also comes with the get_sentiments function that queries text lexicons useful for the analysis.
+
+
+\section{Graphics}
+This project created two main types of graphics. Below
+\subsection{Word Clouds}
+
+```{r pressure, echo=FALSE}
+create_wordcloud
+```
+
+The first type of data visualization involves getting a a word for each novel and creating a wordcloud of the 100 most common words. The names of the protagonists and supporting cast are over-represented. To address this, a file "ignore.csv" was created. The word cloud will ignore anything in that file
+
+\subsection{Plot Progression and Trajectory}
+
+The bing lexicon provides a negative or positive designation for English words. These scores were obtained in 2004. The sentiments are relevant for that time period and can be anachronistic compared to some classic literature. For instance, English speakers in 2004 might view the word miss as a negative word meaning "fail to hit or notice"; however, in older settings and literature this can mean "young woman of nobility". To address these anachronisms, they will be similarly added to the ignore.csv file and processed in the same way.
+
+
+\section{References}
+

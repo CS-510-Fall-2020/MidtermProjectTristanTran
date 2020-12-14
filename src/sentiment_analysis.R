@@ -33,9 +33,9 @@ create_wordcloud <- function(id,title,tidy_books){
 
 get_net_sentiment <- function(book_collection,chunklength){
   result <- tidy_horror %>%
-    inner_join(get_sentiments("bing"))%>%
-    count(title,index = linenumber%/% chunklength, sentiment) %>%
-    spread(sentiment,n,fill=0)%>%
+    inner_join(get_sentiments("bing")) %>%
+    count(title,index = linenumber %/% chunklength, sentiment) %>%
+    spread(sentiment,n,fill=0) %>%
     mutate(sentiment = positive-negative)
   return(result)
 }
