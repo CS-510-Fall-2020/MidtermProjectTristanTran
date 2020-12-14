@@ -1,4 +1,4 @@
-packages<-c("textdata","dplyr","gutenbergr","tidytext","wordcloud")
+packages<-c("textdata","dplyr","gutenbergr","tidytext","wordcloud","readr","tibble")
 install.packages(setdiff(packages, rownames(installed.packages())))  
 library(tidytext)
 library(dplyr)
@@ -7,6 +7,16 @@ library(stringr)
 library(wordcloud)
 library(tidyr)
 library(ggplot2)
+library(readr)
+library(tibble)
+
+create_stop_words <- function(stop_words_csv){
+  my_stop_words <- read_csv(stop_words_csv)
+  my_stop_words <- my_stop_words %>% add_column(lexicon = "horror_novels")
+  all_stop_words <- stop_words %>%
+    bind_rows(my_stop_words)
+  return(all_stop_words)
+}
 
 create_tidy_books <- function(gutenberg_collection){
   result <- gutenberg_collection %>%
