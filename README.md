@@ -53,7 +53,8 @@ The purpose of this project was to create a relatable visual representation of e
 1. Open the R Project.
 2. Adjust the scale of your window plot to view the trajectory.
 3. Make changes to the inputs as desired.
-4. source("src/HorrorAnalysis.R", chdir = FALSE)
+4. source("src/HorrorAnalysis.R", chdir = TRUE)
+5. Read the writeup in "writeup/writeup.pdf"
 ---
 ## Updates after peer review and since midterm
 - Refactor of code: Moving functions and imports to a separate script. fixing some formatting issues with whitespace.

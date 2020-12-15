@@ -21,7 +21,7 @@ The purpose of this project was practicing the basic techniques of data manipula
 
 The program is run by calling the following code.
 ```{r setup, echo=TRUE,message=FALSE,warning=FALSE,results=FALSE}
-source("src/HorrorAnalysis.R")
+source("../src/HorrorAnalysis.R")
 ```
 The code reads through a csv "data/booklist.csv" and returns a word cloud for each book listed.
 
@@ -77,7 +77,7 @@ tidy_jekyll%>%
 The first type of data visualization involves getting a count of words for each novel and creating a word cloud of the 100 most common words. The names of the protagonists and supporting characters are over-represented. To address this, a file "ignore.csv" was created. The possessive and singular of each name must be included at the moment. There most likely exists a more elegant solution; however, this improvement is non-trivial. The word cloud will ignore anything in that file.
 
 ```{r stop_words}
-all_stop_words <- create_stop_words("data/ignore.csv")
+all_stop_words <- create_stop_words("../data/ignore.csv")
 tidy_jekyll_no_stop <- tidy_jekyll%>%
   anti_join(all_stop_words,by="word")
 
@@ -103,7 +103,6 @@ tidy_jekyll_no_stop%>%
 \subsubsection{Figure: Trajectory Graph of Raw Text}
 ```{r progression,echo=FALSE,message=FALSE,warning=FALSE}
 horror_books <- gutenberg_download(horror_book_id, meta_fields = "title")
-all_stop_words <- create_stop_words("data/ignore.csv")
 tidy_horror <- create_tidy_books(horror_books)
 
 horror_sentiment <- get_net_sentiment(tidy_horror,80)

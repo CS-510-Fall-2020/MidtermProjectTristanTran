@@ -31,7 +31,7 @@ create_tidy_books <- function(gutenberg_collection){
 }
 
 create_wordcloud <- function(id,title,tidy_books){
-  filename = paste("results/",title,".jpeg",sep="")
+  filename = paste("../results/",title,".jpeg",sep="")
   jpeg(file = filename)
   tidy_books%>%
     filter(gutenberg_id == id) %>%
