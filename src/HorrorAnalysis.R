@@ -16,7 +16,6 @@ tidy_horror <- create_tidy_books(horror_books) %>%
 for (row in 1:nrow(books)){
   id <- books[row,1]
   title <- books[row,2]
-  print(paste(id,title))
   create_wordcloud(id,title,tidy_horror)
 }
 # get for each chunk (defined as 80 lines) 

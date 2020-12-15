@@ -29,6 +29,8 @@ The nrc emotion lexicon is a list of english words and their associations with o
 The code takes in a CSV containing gutenberg ID's. feel free to add any books you would like. They don't have to be horror, but I just particularly like that genre. You can find more titles and ids here
 http://www.gutenberg.org/
 
+Code also takes in a CSV for words to ignore. The tidytext package filters conjugations and such, but ignores
+
 ---
 ## Code Out
 It will return jpeg word clouds and some plots showing the most commonly used words in each book and a sentiment analysis by chapter.
@@ -49,18 +51,18 @@ The purpose of this project was to create a relatable visual representation of e
 
 ## To run the analysis
 1. Open the R Project.
-2. Create a "results/" folder in the top directory.
+2. Adjust the scale of your window plot to view the trajectory.
 3. Make changes to the inputs as desired.
 4. source("src/HorrorAnalysis.R", chdir = FALSE)
 ---
-## Updates after peer review
+## Updates after peer review and since midterm
 - Refactor of code: Moving functions and imports to a separate script. fixing some formatting issues with whitespace.
 - Updating readme to give more explanation of the project.
-
-
-## Challenges and Opportunities
-- Most classic works of literature are written with different lexicons: Clowns used to be popular entertainment for children's parties and are now a common fear. 
-- Omission of anachronistic sentiments such as the use of the word miss as both an honorific vs. a failure.
-- Automatic scaling of the word cloud so that most popular words are not omitted
+- Stop words and anachronisms are now excluded
 - Ommission of character names from word clouds.
 - Encapsulating the project into a R-Markdown format.
+
+## Challenges and Opportunities
+- Automatic scaling of the word cloud so that most popular words are not omitted
+- GGplot trajectory will scale with your window, so please adjust your window before sourcing the project
+- Make code sensitive to bigrams. Words like not can reverse the sentiment of the next word.
